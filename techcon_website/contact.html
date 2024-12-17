@@ -6,10 +6,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <title>Register for TechCon 2024</title>
+    <title>About TechCon 2024</title>
+    <title>Contact Us - TechCon<sup>24</sup>
+    </sup></title>
     <style>
         body {
-            font-family:  "Share Tech Mono";
+            font-family: "Share Tech Mono";
             margin: 0;
             padding: 0;
             line-height: 1.6;
@@ -48,8 +50,24 @@
         }
         main {
             padding: 20px;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
+        }
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        .contact-info a {
+            color: #fe691e;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            margin-bottom: 20px;
         }
         form {
             background-color: #f4f4f4;
@@ -63,15 +81,12 @@
         }
         form input[type="text"], 
         form input[type="email"], 
-        form input[type="password"] {
+        form textarea {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
-        }
-        form input[type="checkbox"] {
-            margin-right: 10px;
         }
         form button {
             background-color: #007BFF;
@@ -97,8 +112,7 @@
 <body>
     <!-- Header -->
     <header>
-        <h1>Register for TechCon<sup>24</sup>
-        </sup></h1>
+        <h1>Contact Us</h1>
     </header>
 
     <!-- Navigation -->
@@ -106,33 +120,45 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
             <li><a href="register.html">Register</a></li>
-            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Main Content -->
     <main>
-        <h2>Sign Up for TechCon<sup>24</sup></h2>
-        <form action="submit_registration.php" method="POST">
-            <label for="name">Full Name:</label>
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Email us at: <a href="mailto:contact@techcon2024.com">contact@techcon2024.com</a></p>
+            <p>Follow us on social media:</p>
+            <ul>
+                <li><a href="https://facebook.com/TechCon2024" target="_blank">Facebook</a></li>
+                <li><a href="https://twitter.com/TechCon2024" target="_blank">Twitter</a></li>
+                <li><a href="https://linkedin.com/company/TechCon2024" target="_blank">LinkedIn</a></li>
+            </ul>
+        </div>
+
+        <!-- Embedded Google Map -->
+        <h2>Conference Venue</h2>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509401!2d-122.42177838468212!3d37.77492927975878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064f0a4a8c7%3A0x0!2zTWFpbiBTdHJlZXQsIFNhbiBGcmFuY2lzY28sIENB!5e0!3m2!1sen!2sus!4v1603945261563!5m2!1sen!2sus" 
+            allowfullscreen="">
+        </iframe>
+
+        <!-- Contact Form -->
+        <h2>Contact Us</h2>
+        <form action="submit_contact.php" method="POST">
+            <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required placeholder="Enter your full name">
 
-            <label for="email">Email Address:</label>
+            <label for="email">Your Email:</label>
             <input type="email" id="email" name="email" required placeholder="Enter your email address">
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required placeholder="Enter a secure password">
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Enter your message here"></textarea>
 
-            <label for="confirm-password">Confirm Password:</label>
-            <input type="password" id="confirm-password" name="confirm_password" required placeholder="Confirm your password">
-
-            <label>
-                <input type="checkbox" id="terms" name="terms" required>
-                I agree to the <a href="terms.html" target="_blank">terms and conditions</a>.
-            </label>
-
-            <button type="submit">Register Now</button>
+            <button type="submit">Send Message</button>
         </form>
     </main>
 
